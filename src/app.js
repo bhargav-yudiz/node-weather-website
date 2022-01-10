@@ -20,6 +20,9 @@ const fetchWeatherForLocation = require("./utils/weatherService");
 
 const app = express();
 
+//
+const PORT = process.env.PORT || 3000;
+
 // to serve up a directory using express, like in this case to serve up public folder using express call app.use()
 // .use() is a way to customize your server
 // express.static() is another function. in this we can pass the path to the folder that we wanna serve up. the return value of express.static() will be passed to app.use();
@@ -168,6 +171,6 @@ app.get("*", function appErrGet(req, res) {
   })
 });
 
-app.listen(3000, function appListenerCb() {
+app.listen(PORT, function appListenerCb() {
   console.log("Server is listening on port 3000");
 });

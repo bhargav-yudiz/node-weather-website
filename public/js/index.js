@@ -9,7 +9,7 @@ weatherForm.addEventListener("submit", function submitWeatherForm(e) {
   weatherDataContainer.children[0].textContent = `Loading...`;
   weatherDataContainer.children[1].textContent = ``;
 
-  fetch(`http://localhost:3000/weather?address=${location}`)
+  fetch(`/weather?address=${location}`)
     .then(function fetchWeatherRes(response) {
       response.json().then(function resJsonThen(data) {
         if (data.error) {
