@@ -1,0 +1,28 @@
+{{!-- this is a dynamic template in which you'll inject values to show content dynamically --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/weather-icon.png">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Home</title>
+</head>
+<body>
+  {{>header}}
+  <p>Use this site to get your weather!</p>
+
+  <form action="" id="weather-form">
+    <input type="text" id="location-input" placeholder="Type your location...">
+    <button id="weather-search-btn">Search</button>
+  </form>
+
+  <div class="" id="weather-data-container">
+    <p></p>
+    <p></p>
+  </div>
+  {{>footer}}
+<script src="/js/index.js"></script>
+</body>
+</html>
