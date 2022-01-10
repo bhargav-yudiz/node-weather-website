@@ -110,8 +110,8 @@ app.get("/help", function appHelpGet(req, res) {
 app.get("/about", function appAboutGet(req, res) {
   res.render("about", {
     title: "About Page",
-    info: "this is just some really interesting information about me and this particular page that I have built",
-    name: "Do you really think I have a name?"
+    info: "This site is created by Bhargav Pandya. It uses data from mapbox.com & weatherstack.com",
+    name: "Bhargav Pandya"
   });
 })
 // app.get("/about", function appAboutGet(req, res) {
