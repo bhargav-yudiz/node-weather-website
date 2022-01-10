@@ -90,7 +90,7 @@ app.get("/help", function appHelpGet(req, res) {
   res.render("help", {
     title: "The Help",
     name: "Andrew Garfield",
-    msg: "this is an example message"
+    msg: "Do you really need help on such a simple application??"
   });
 })
 // app.get("/help", function appHelpGet(req, res) {

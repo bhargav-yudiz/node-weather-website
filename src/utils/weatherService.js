@@ -21,7 +21,7 @@ const request = require("request");
 function fetchWeatherForLocation(latitude, longitude, callback) {
   const url = `http://api.weatherstack.com/current?access_key=829d36c002a6c030b88f9e6fdbfb1ef0&query=${latitude},${longitude}`;
 
-  request({url, json: true}, function fetchWeather(error, response) {
+  request({ url, json: true }, function fetchWeather(error, response) {
     if (error) {
       callback("Unable to connect to weather services", null);
     } else if (response?.body?.error) {
@@ -30,10 +30,10 @@ function fetchWeatherForLocation(latitude, longitude, callback) {
       // console.log(response.body?.error?.type);
       // console.log(response.body?.error?.info);
     } else {
-      const {weather_descriptions, temperature, humidity} = response?.body?.current
+      const { weather_descriptions, temperature, humidity, wind_speed } = response?.body?.current
       // callback(null, response?.body);
       callback(null, {
-        forecast: `${weather_descriptions[0]}. It is currently ${temperature} degrees out. Chances of rain: ${humidity}%`,
+        forecast: `${weather_descriptions[0]}. \nIt is currently ${temperature} degrees out. \nChances of rain: ${humidity}%. \nThe Wind Speed is: ${wind_speed}`,
         location: `${response?.body?.location?.name} ${response?.body?.location?.country}`
       })
     }
