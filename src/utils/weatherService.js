@@ -30,10 +30,14 @@ function fetchWeatherForLocation(latitude, longitude, callback) {
       // console.log(response.body?.error?.type);
       // console.log(response.body?.error?.info);
     } else {
-      const { weather_descriptions, temperature, humidity, wind_speed } = response?.body?.current
+      const { weather_descriptions, temperature, humidity, wind_speed, feelslike } = response?.body?.current
       // callback(null, response?.body);
       callback(null, {
-        forecast: `${weather_descriptions[0]}. \nIt is currently ${temperature} degrees out. \nChances of rain: ${humidity}%. \nThe Wind Speed is: ${wind_speed}`,
+        forecast: `${weather_descriptions[0]}.
+        It is currently ${temperature} degrees out. 
+        It feels like ${feelslike} degrees out. 
+        The Humidity is: ${humidity}%.
+        The Wind Speed is: ${wind_speed}`,
         location: `${response?.body?.location?.name} ${response?.body?.location?.country}`
       })
     }
